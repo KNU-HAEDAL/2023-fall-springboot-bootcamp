@@ -1,5 +1,6 @@
 package com.example.firstproject.entity;
 
+import com.example.firstproject.dto.ArticleUpdateForm;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,6 +22,12 @@ public class Article{
     private String title;
     @Column//content 필드 선언, DB테이블의 content 열과 연결됨
     private String content;
+
+    public void update(ArticleUpdateForm dto) {
+        id = dto.getId();
+        title =  dto.getTitle();
+        content = dto.getContent();
+    }
 
   /*  public Article() {//이거 없으면 오류발생 왜???
 

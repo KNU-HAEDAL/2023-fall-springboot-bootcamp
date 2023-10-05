@@ -1,4 +1,6 @@
+<!-- show.mustache -->
 {{>layouts/header}}
+
 <table class="table">
     <thead>
     <tr>
@@ -8,13 +10,19 @@
     </tr>
     </thead>
     <tbody>
-    {{#articleList}}
+    {{#article}}
         <tr>
             <th>{{id}}</th>
             <td>{{title}}</td>
             <td>{{content}}</td>
         </tr>
-    {{/articleList}}
+    {{/article}}
     </tbody>
 </table>
+
+<a href="/articles/{{article.id}}/edit">Edit</a>
+
 {{>layouts/footer}}
+
+
+
