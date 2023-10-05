@@ -17,7 +17,7 @@ import java.util.Optional;
 @Slf4j //로깅기능
 @Controller
 public class ArticleController {
-    @Autowired
+    @Autowired //스프링부트가 미리 생성해놓은 리파지터리 객체주입(DI)
     private ArticleRepository articleRepository;
 
     @GetMapping("/articles/new")
@@ -38,10 +38,12 @@ public class ArticleController {
         Article saved=articleRepository.save(article);
         log.info(saved.toString());
         //System.out.println(saved.toString());
-        return "";
+        return "redirect:/articles";
     }
-    @GetMapping("/articles/{id}")
+    @GetMapping("/articles/{id}") //데이터 조회 요청 접수
+    //컨트롤러에서 URL변수를 사용할때는 중괄호 하나만 쓴다
     public String show(@PathVariable Long id, Model model){
+        //@PathVariable: URL요청으로 들어온 전달값을 컨트롤러의 매개변수로 가져오는 어노테이션
         log.info("id= " + id);
         //1. id를 조회해 데이터 가져오기
         Article articleEntity= articleRepository.findById(id).orElse(null);
@@ -54,6 +56,7 @@ public class ArticleController {
     public String index(Model model){
         //1. 모든 데이터 가져오기
         ArrayList<Article> articleEntityList =articleRepository.findAll();
+        log.info("동작해요");
         //2. 모델에 데이터 등록하기
         model.addAttribute("articleList",articleEntityList);
         //3. 뷰 페이지 설정하기

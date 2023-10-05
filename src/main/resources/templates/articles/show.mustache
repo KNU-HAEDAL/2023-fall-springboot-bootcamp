@@ -14,11 +14,14 @@
     {{#article}}
     <tr>
         <th>{{id}}</th>
-        <td>{{titile}}</td>
+        <td>{{title}}</td>
         <td>{{content}}</td>
     </tr>
     {{/article}}
     </tbody>
 </table>
+
+<!-- show.mustache -->
+<a href="/articles/{{article.id}}/edit">Edit</a>
 
 {{>layouts/footer}}

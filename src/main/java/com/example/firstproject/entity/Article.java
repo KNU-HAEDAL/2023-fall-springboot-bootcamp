@@ -1,5 +1,6 @@
 package com.example.firstproject.entity;
 
+import com.example.firstproject.dto.ArticleUpdateForm;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,5 +24,9 @@ public class Article {
     private String content;
 
 
-
+    public void update(ArticleUpdateForm dto) {
+        id=dto.getId();
+        title=dto.getTitle();
+        content=dto.getContent();
+    }
 }
