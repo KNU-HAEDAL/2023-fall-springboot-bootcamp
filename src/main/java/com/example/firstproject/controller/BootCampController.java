@@ -24,6 +24,9 @@ public class BootCampController {
         return "/articles/edit";
     }
 
+    //git add .
+    //git commit -m "push 연습"
+    //git push bootcamp 이름
     @PostMapping("/articles/update")
     public String update(ArticleUpdateForm dto){
         // 1. DTO에서 ID 추출
