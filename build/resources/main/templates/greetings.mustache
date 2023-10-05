@@ -1,0 +1,17 @@
+<!--header에 해당하는 html 양식을 templates/layouts/header.mustache에 정의함으로써-->
+<!--다른 뷰 템플릿들에도 공통으로 쓰이는 코드를 단지 >layouts/header 로 줄여쓸 수 있다.-->
+
+{{>layouts/header}}
+    <!-- content -->
+    <div class="bg-dark text-white p-5">
+        <h1>{{username}}님, 반갑습니다!</h1>
+    </div>
+
+    <!-- site info -->
+
+<!--footer 또한 마찬가지로 layouts 폴더에 정의하여 줄여쓸 수 있음-->
+{{>layouts/footer}}
+
+<!--레이아웃이란 화면에 요소를 배치하는 것을 말한다. 웹 페이지는 같은 요소로도 어떻게 배치하느냐에 따라 다른 느낌을 줄 수 있다.-->
+<!--부트스트랩이란 웹 페이지를 쉽게 만들 수 있도록 작성해 놓은 코드 모음으로 미리 작성된 HTML/CSS/자바스크립트 코드를 가져다 사용할 수 있습니다.-->
+<!--템플릿이란 코드를 하나의 틀로 만들어 변수화하는 것을 말한다.-->

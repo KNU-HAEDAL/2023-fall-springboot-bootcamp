@@ -1,0 +1,13 @@
+<!--header에 해당하는 html 양식을 templates/layouts/header.mustache에 정의함으로써-->
+<!--다른 뷰 템플릿들에도 공통으로 쓰이는 코드를 단지 >layouts/header 로 줄여쓸 수 있다.-->
+
+{{>layouts/header}}
+<!-- content -->
+<div class="bg-dark text-white p-5">
+    <h1>{{username}}님, 다음에 또 만나요!</h1>
+</div>
+
+<!-- site info -->
+
+<!--footer 또한 마찬가지로 layouts 폴더에 정의하여 줄여쓸 수 있음-->
+{{>layouts/footer}}
