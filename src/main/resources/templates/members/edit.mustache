@@ -1,0 +1,24 @@
+{{>layouts/header}}
+<!--수정2. edit 페이지 만들기-->
+{{#member}}
+<form class="container" action="/members/update" method="post">
+    <input name="id" type="hidden" value="{{id}}">
+    <div class="mb-3">
+        <label class="form-label">이메일</label>
+        <input type="email" class="form-control" name="email" value="{{email}}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">비밀번호</label>
+        <textarea class="form-control" rows="3" name="password">{{password}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="/members/{{member.id}}">Back</a>
+</form>
+{{/member}}
+
+{{>layouts/footer}}
+
+<!--수정과정-->
+<!--DB에 저장된 데이터 가져와서 수정 페이지에 출력한뒤-->
+<!--데이터 수정 후 DB에 갱신-->
+<!--갱신된 데이터를 리다이렉트로 페이지에 표시-->

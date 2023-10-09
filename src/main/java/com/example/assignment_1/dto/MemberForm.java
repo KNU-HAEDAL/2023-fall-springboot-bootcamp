@@ -9,11 +9,11 @@ import lombok.ToString;
 @ToString
 
 public class MemberForm {
-
+    private Long id;
     private String email;
     private String password;
 
     public Member toEntity() {
-        return new Member(null,email,password); //7. toEntity() 작성
+        return new Member(id,email,password); //7. toEntity() 작성
     }
 }

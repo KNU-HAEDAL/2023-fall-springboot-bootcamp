@@ -5,11 +5,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 //6. Entity 생성? 아무튼 폴더 만들어서 하기
 @Entity
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
@@ -22,5 +24,6 @@ public class Member {
     private String email;
     @Column
     private String password;
+
 
 }
